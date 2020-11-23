@@ -71,9 +71,9 @@ The Directory Structure:
 | Command / Symbol  | Meaning                                                 | Examples                    | Note    |   
 |-------------------|---------------------------------------------------------|-----------------------------|---------|
 | *                 | Wildcard, match against none or more character(s)       |                             |         |   
-| abc*              | All files in the current directory starting with abc... | abcss,abct,abcd,abc         |         |   
-| *abc              | All files in the current directory ending with ...abc   | sffabc,fabc,abc             |         |   
-| ~                 | Willcard, match exactly one character                   | ~ouse: house, mouse, ~~grouse~~ |         |   
+| abc*              | All files in the current directory starting with abc... | **abc**ss,**abc**t,**abc**d,**abc**         |         |   
+| *abc              | All files in the current directory ending with ...abc   | sff**abc**,f**abc**,**abc**             |         |   
+| ~                 | Willcard, match exactly one character                   | **~**ouse: **h**ouse, **m**ouse, ~~grouse~~ |         |   
 | man <command>     | Read the online manual page for a command               |                             |         |   
 | help <command>    | Short description of the use of the command             |                             | using   |   
 | whatis <command>  | Brief description of a command                          |                             | meaning |   
@@ -149,7 +149,7 @@ Some shell variables:
 |prompt|the text string used to prompt for interactive commands shell your login shell|
 
 ## References
-[UNIX Tutorial for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+[UNIX Tutorial for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/)<br/>
 [Erle Robotics Unix Introduction Gitbook](https://erlerobotics.gitbooks.io/erle-robotics-unix-introduction-gitbook-free/content/index.html)
 # License
 Creative Commons Attribution 4.0 International (CC BY 4.0) @ [Willogy](https://willogy.io)
