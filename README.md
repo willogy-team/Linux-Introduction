@@ -73,7 +73,7 @@ The Directory Structure:
 | *                 | Wildcard, match against none or more character(s)       |                             |         |   
 | abc*              | All files in the current directory starting with abc... | **abc**ss,**abc**t,**abc**d,**abc**         |         |   
 | *abc              | All files in the current directory ending with ...abc   | sff**abc**,f**abc**,**abc**             |         |   
-| ~                 | Willcard, match exactly one character                   | **~**ouse: **h**ouse, **m**ouse, ~~grouse~~ |         |   
+| ~                 | Willcard, match exactly one character                   | ~ouse: **h**ouse, **m**ouse, ~~grouse~~ |         |   
 | man <command>     | Read the online manual page for a command               |                             |         |   
 | help <command>    | Short description of the use of the command             |                             | using   |   
 | whatis <command>  | Brief description of a command                          |                             | meaning |   
@@ -121,6 +121,14 @@ The Directory Structure:
 >- Optionally, type **make check** to run any self-tests that come with the package
 >- Type **make install** to install the programs and any data files and documentation
 >- Optionally, type **\`** make clean to remove the program binaries and object files from the source code directory
+
+> Example:
+>- Download source code: A piece of free software that converts between different units of measurements.<br/>First create a download directory:<br/> **% mkdir download** <br/> [Download the software here](http://www.ee.surrey.ac.uk/Teaching/Unix/units-1.74.tar.gz) and save it to your new download directory.
+>- Extract source code:<br/>Go into your download directory and list the contents:<br/>**% cd download**<br/>**% ls -l**<br/>First unzip the file using the gunzip command. This will create a .tar file.<br/>**% gunzip units-1.74.tar.gz** <br/>Then extract the contents of the tar file. <br/>**% tar -xvf units-1.74.tar**<br/>Again, list the contents of the download directory, then go to the units-1.74 sub-directory.<br/>**% cd units-1.74**
+>- Configure and create the Makefile:<br/>The units package uses the GNU configure system to compile the source code. We will need to specify the installation directory, since the default will be the main system area which you will not have write permissions for. We need to create an install directory in your home directory.<br/>**% mkdir ~/units174**<br/>Then run the configure utility setting the installation path to this.<br/>**% ./configure --prefix=$HOME/units174**
+>- Build the package: <br/> Now you can go ahead and build the package by running the make command.  <br/>**% make**<br/>After a minute or two (depending on the speed of the computer), the executables will be created. You can check to see everything compiled successfully by typing<br/>**% make check**<br/>If everything is okay, you can now install the package.<br/>**% make install**<br/>This will install the files into the **~/units174** directory you created earlier.
+>- Run the software:<br/> You are now ready to run the software (assuming everything worked).  <br/>**% cd ~/units174**<br/>If you list the contents of the units directory, you will see a number of subdirectories (bin,info,man,share)<br/>To run the program, change to the **bin** directory and type<br/>**% ./units** <br/> As an example, convert 6 feet to meters.<br/>**You have: 6 feet**<br/>**You want: metres**<br/>**\* 1.8288**<br/>If you get the answer 1.8288, congratulations, it worked.<br/>To view what units it can convert between, view the data file in the share directory (the list is quite comprehensive).<br/>To read the full documentation, change into the info directory and type <br/>**% info --file=units.info**
+
 
 ## UNIX Variables
 
